@@ -1,42 +1,56 @@
 # Knowledge Forge
 
-Knowledge Forge est un projet expérimental visant à construire progressivement un graphe de connaissances à partir de contenus ingérés.
 
-L’objectif de la V0.1 est simple : représenter des concepts, leurs relations, leurs sources, puis préparer une base saine pour un futur moteur d’ingestion plus avancé.
+Knowledge Forge est un projet expérimental dont l'objectif est de faciliter l'apprentissage en structurant les connaissances sous forme de concepts, de relations et de sources.
 
-## Objectif de la V0.1
+À terme, le projet vise à devenir un compagnon d'apprentissage capable d'ingérer des connaissances, d'en produire des résumés personnalisés et d'aider l'utilisateur à organiser, suivre et approfondir son parcours d'apprentissage.
 
-Cette première version pose les fondations métier du système :
+Le projet évolue progressivement au rythme de mon apprentissage autour de Python, de l'architecture logicielle, des graphes de connaissances, du Machine Learning et de l'intelligence artificielle.
 
-* représenter un concept avec `KnowledgeNode`
-* représenter une relation entre deux concepts avec `KnowledgeRelation`
-* gérer progressivement un graphe de connaissances avec `KnowledgeGraph`
-* conserver les sources associées aux connaissances
-* éviter les doublons grâce à la normalisation des noms
 
-## Structure actuelle
+## Pourquoi ce projet ?
 
-```txt
-app/
-└── domain/
-    ├── knowledge_node.py
-    ├── knowledge_relation.py
-    └── knowledge_graph.py
-```
+Knowledge Forge est conçu comme un laboratoire personnel permettant de :
 
-## Principes travaillés
+- Structurer les connaissances acquises
+- Comprendre les mécanismes derrière les systèmes de gestion de connaissances
+- Expérimenter des concepts liés à l'intelligence artificielle
+- Développer progressivement un outil réellement utile à l'apprentissage quotidien
 
-Ce projet sert aussi de support d’apprentissage autour de :
+Chaque nouvelle fonctionnalité est ajoutée dans une logique d'apprentissage et de compréhension des concepts.
 
-* la modélisation orientée métier
-* les responsabilités entre objets
-* les données primaires et dérivées
-* la validation métier
-* la normalisation des données
-* la conception progressive d’un système maintenable
 
-## Statut
+## Fonctionnalités actuelles
 
-Projet en cours de développement.
+### Gestion des concepts
 
-Version actuelle : V0.1 — fondations du domaine métier.
+- Création de concepts via `KnowledgeNode`
+- Gestion des descriptions
+- Gestion des alias
+- Gestion des sources
+- Évitement des doublons
+
+### Gestion des relations
+
+- Création de relations entre concepts via `KnowledgeRelation`
+- Gestion des sources associées aux relations
+- Évitement des doublons de relations
+
+### Gestion du graphe
+
+- Création automatique des concepts lors de l'ajout d'une relation
+- Centralisation des connaissances dans `KnowledgeGraph`
+- Normalisation des données
+- Résolution des relations entre concepts
+
+### Visualisation
+
+- Génération d'un résumé lisible du graphe
+- Affichage des concepts
+- Affichage des relations
+- Comptage des sources
+
+### Etat actuel
+
+Projet en cours de développement
+

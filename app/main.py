@@ -1,16 +1,29 @@
-from app.domain.knowledge_node import KnowledgeNode
+from domain.knowledge_graph import KnowledgeGraph
 
 
+def build_learning_graph() -> KnowledgeGraph:
+    graph = KnowledgeGraph()
 
-node = KnowledgeNode(
-        id="node_001",
-        name="Gradient Descent",
-        description="Algorithme d'optimisation permettant de minimiser une fonction de coût.",
-)
+    graph.add_relation( source_name="Machine Learning",
+                        relation_type="utilise",
+                        target_name="Algèbre Linéaire",
+                        source="roadmap_ml.md"
+                       )
 
-node.sources.add("document_A")
-node.sources.add("document_B")
-node.sources.add("document_A")
+    graph.add_relation( source_name="Machine Learning",
+                        relation_type="utilise",
+                        target_name="Probabilités",
+                        source="roadmap_ml.md"
+                       )
 
-print(node)
-print(node.source_count)
+    graph.add_relation( source_name="Machine Learning",
+                        relation_type="utilise",
+                        target_name="Algèbre Linéaire",
+                        source="cours_ml.md"
+                       )
+
+    return graph
+
+if __name__ == "__main__":
+        learning_graph = build_learning_graph()
+        print(learning_graph.summarize())
