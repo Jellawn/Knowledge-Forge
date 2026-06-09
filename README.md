@@ -20,37 +20,47 @@ Knowledge Forge est conçu comme un laboratoire personnel permettant de :
 Chaque nouvelle fonctionnalité est ajoutée dans une logique d'apprentissage et de compréhension des concepts.
 
 
-## Fonctionnalités actuelles
+## Architecture actuelle
 
-### Gestion des concepts
+Knowledge Forge repose actuellement sur un pipeline simple permettant de transformer une connaissance en document exploitable :
 
-- Création de concepts via `KnowledgeNode`
-- Gestion des descriptions
-- Gestion des alias
-- Gestion des sources
-- Évitement des doublons
+KnowledgeNode
+↓
+KnowledgeNodeMapper
+↓
+MarkdownDataValidator
+↓
+MarkdownExporter
+↓
+Fichier Markdown
 
-### Gestion des relations
+Cette architecture permet de séparer clairement :
 
-- Création de relations entre concepts via `KnowledgeRelation`
-- Gestion des sources associées aux relations
-- Évitement des doublons de relations
+- Le domaine métier
+- La transformation des données
+- La validation
+- L'export
+- La persistance des fichiers
 
-### Gestion du graphe
-
-- Création automatique des concepts lors de l'ajout d'une relation
-- Centralisation des connaissances dans `KnowledgeGraph`
-- Normalisation des données
-- Résolution des relations entre concepts
-
-### Visualisation
-
-- Génération d'un résumé lisible du graphe
-- Affichage des concepts
-- Affichage des relations
-- Comptage des sources
+Chaque composant possède une responsabilité unique afin de faciliter l'évolution future du projet.
 
 ### Etat actuel
 
-Projet en cours de développement
+Version : V0.1
+
+Fonctionnalités validées :
+
+- Création de concepts via KnowledgeNode
+- Gestion des relations entre concepts
+- Centralisation dans KnowledgeGraph
+- Mapping des données pour l'export
+- Validation des données exportables
+- Génération automatique de fichiers Markdown
+
+Prochaines étapes :
+
+- Ingestion automatisée des connaissances
+- Génération de plusieurs fiches à partir du graphe
+- Enrichissement des métadonnées
+- Développement de l'interface utilisateur
 
