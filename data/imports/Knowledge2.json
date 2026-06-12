@@ -1,0 +1,28 @@
+[
+  {
+    "node_id": "gradient_descent",
+    "node_title": "Gradient Descent",
+    "summary": "Algorithme d'optimisation...",
+    "relations": [
+        {
+            "target": "Learning Rate",
+            "type": "uses"
+        }
+    ],
+    "keywords": ["Gradient", "Learning Rate"],
+    "references": ["roadmap_ml.md"]
+  },
+  {
+    "node_id": "learning_rate",
+    "node_title": "Learning Rate",
+    "summary": "Paramètre qui contrôle la taille des pas pendant l'apprentissage.",
+    "relations": [
+        {
+            "target": "Gradient Descent",
+            "type": "used_by"
+        }
+    ],
+    "keywords": ["Step Size", "Optimization"],
+    "references": ["roadmap_ml.md"]
+  }
+]

@@ -1,0 +1,13 @@
+{
+    "id": "gradient_descent",
+    "name": "Gradient Descent",
+    "description": "Algorithme d'optimisation permettant de réduire progressivement une erreur.",
+    "aliases": [
+        "Descente de gradient",
+        "Gradient",
+        "Learning Rate"
+    ],
+    "sources": [
+        "roadmap_ml.md"
+    ]
+}

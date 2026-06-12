@@ -10,6 +10,7 @@ Le projet évolue progressivement au rythme de mon apprentissage autour de Pytho
 
 ## Pourquoi ce projet ?
 
+
 Knowledge Forge est conçu comme un laboratoire personnel permettant de :
 
 - Structurer les connaissances acquises
@@ -22,17 +23,25 @@ Chaque nouvelle fonctionnalité est ajoutée dans une logique d'apprentissage et
 
 ## Architecture actuelle
 
+
 Knowledge Forge repose actuellement sur un pipeline simple permettant de transformer une connaissance en document exploitable :
 
-KnowledgeNode
+JSON
 ↓
-KnowledgeNodeMapper
+JSON Reader
 ↓
-MarkdownDataValidator
+Normalizer
 ↓
-MarkdownExporter
+Knowledge Graph
+├── KnowledgeNode
+└── KnowledgeRelation
 ↓
-Fichier Markdown
+Exploration / Export
+
+Les connaissances sont importées depuis des sources externes, normalisées puis intégrées dans un graphe de connaissances composé de concepts (KnowledgeNode) et de relations (KnowledgeRelation). Le graphe constitue désormais le cœur du système et servira de base aux futurs mécanismes d'exploration, de génération de contenu et d'apprentissage personnalisé.
+
+(Un premier système d'export Markdown existe également, mais il devra être réintégré proprement autour du KnowledgeGraph.)
+
 
 Cette architecture permet de séparer clairement :
 
@@ -44,23 +53,31 @@ Cette architecture permet de séparer clairement :
 
 Chaque composant possède une responsabilité unique afin de faciliter l'évolution future du projet.
 
+
 ### Etat actuel
+
 
 Version : V0.1
 
 Fonctionnalités validées :
 
+- Lecture de données JSON
+- Normalisation des données importées
 - Création de concepts via KnowledgeNode
-- Gestion des relations entre concepts
-- Centralisation dans KnowledgeGraph
-- Mapping des données pour l'export
-- Validation des données exportables
-- Génération automatique de fichiers Markdown
+- Création de relations via KnowledgeRelation
+- Centralisation des concepts et relations dans KnowledgeGraph
+- Import automatisé des relations depuis JSON
+- Gestion des doublons de concepts
+- Gestion des doublons de relations
+- Génération d'un résumé textuel du graphe
+
 
 Prochaines étapes :
 
-- Ingestion automatisée des connaissances
-- Génération de plusieurs fiches à partir du graphe
-- Enrichissement des métadonnées
-- Développement de l'interface utilisateur
+- Ajouter des méthodes d'exploration du graphe
+- Améliorer l'import des connaissances
+- Introduire des identifiants stables pour les concepts
+- Construire les premiers parcours de connaissances
+- Réintégrer les mécanismes d'export
+- Préparer l'architecture de la future interface utilisateur
 
